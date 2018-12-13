@@ -1,94 +1,72 @@
 <?php
-abstract class Automobil
+abstract class Autobus
 {
-    public function move(){
-        return 'Merge';
+public function move(){
+return 'Autobuzul Porneste';
     }
-    public function rotateLeft(){
-        return 'Rotire la Stinga';
+public function rotateLeft(){
+return 'Facem La Stinga';
     }
-    public function rotateRight(){
-        return 'Rotire la Dreapta';
+public function rotateRight(){
+return 'Facem La Dreapta';
     }
-    public function distance($x){
-        return $x;
+public function stop(){
+return 'Oprire Autobus';
     }
-}
-class Car extends Automobil {
-    private $name = 'Masina';
-    public function Start()
-    {
-        return $this->name. 'Start';
-    }
-    public function Stop()
-    {
-        return $this->name. 'Stop';
-    }
-    public function move($x)
-    {
-    return $this->name . ' ' . parent::move() . ' '. $x;
-    }
-    public function rotateRight()
-    {
-        return $this->name . ' ' . parent::rotateRight() . ' Rotire la dreapta';
-    }
-    public function rotateLeft()
-    {
-        return $this->name . ' ' . parent::rotateLeft() . ' Rotire la stinga';
-    }
+
 }
 
+
+class Car extends Autobus {
+
+public $name = 'Autobuzul';
+
+public function start()
+    {
+return $this->name.' '. 'Start Ruta';
+    }
+public function stop()
+    {
+return $this->name.' '. 'Stop Ruta';
+    }
+public function move($x)
+    {
+return $this->name .' '.$x;
+    }
+
+public function rotateRight()
+    {
+return $this->name . ' ' . parent::rotateRight();
+    }
+public function rotateLeft()
+    {
+return $this->name . ' ' . parent::rotateLeft();
+    }
+
+}
 
 
 $car = new Car();
 echo $car->start();
 ?><hr><?
-echo $car->move(10);
+echo $car->move('merge spre oporirea nr 1');
 ?><hr><?
-echo $car->rotateRight();
+echo $car->move('stopeaza la oporirea nr 1');
 ?><hr><?
-echo $car->move(40);
+echo $car->move('porneste la oporirea nr 2');
 ?><hr><?
-echo $car->rotateLeft();
+echo $car->move('stopeaza la oporirea nr 2');
 ?><hr><?
-echo $car->move(30);
+echo $car->move('porneste la oporirea nr 3');
 ?><hr><?
-echo $car->rotateLeft();
+echo $car->move('stopeaza la oporirea nr 3');
 ?><hr><?
-echo $car->move(25);
+echo $car->move('porneste la oporirea nr 4');
 ?><hr><?
-echo $car->rotateRight();
+echo $car->move('Stopeaza la oporirea nr 4');
 ?><hr><?
-echo $car->move(35);
+echo $car->move('porneste la oporirea nr 5');
 ?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(35);
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(25);
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(70);
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(45);
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(20);
-?><hr><?
-echo $car->rotateRight();
-?><hr><?
-echo $car->move(10);
-?><hr><?
-echo $car->rotateLeft();
-?><hr><?
-echo $car->move(100);
+echo $car->move('Stopeaza la oporirea nr 5');
 ?><hr><?
 echo $car->stop();
